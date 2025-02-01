@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog About My Life</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            background-color: yellow;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            margin: 20px;
+        }
+        .menu {
+            width: 20%;
+            padding: 10px;
+        }
+        footer{
+            text-align:center;
+
+        }
+        .content {
+            width: 60%;
+            padding: 10px;
+        }
+        .sidebar {
+            width: 150px;
+            padding:5px;
+            height:135px;
+            border: 2px dashed green;
+            text-align: right;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .sidebar a {
+            display: block;
+            text-decoration: none;
+            color: blue;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .menu a, .sidebar a {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        My blog about my life
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <h3>Menu</h3>
+            <a href="http://www.Today.com">Today</a>
+            <a href="http://www.Yesterday.com">Yesterday</a>
+            <a href="http://www.Last Week.com">Last Week</a>
+            <a href="http://www.Archives.com">Archives</a>
+        </div>
+       <hr style="color: green; border-color: green;"></hr>
+        <div class="content">
+            <h2>Meeting with Supervisor</h2>
+            <p><strong>14 Dec 2011</strong></p>
+            <p>Today I went to the university by bus.</p>
+            <p>I had a meeting with my PHD supervisor.</p>
+
+            <h2>New Car!!!</h2>
+            <p><strong>12 Dec 2011</strong></p>
+            <p>Today I bought my new car. It's a Honda Accord and it's really nice.</p>
+            <p>I met some friends at a pub.</p>
+
+            <h2>Visit My Parents</h2>
+            <p><strong>10 Dec 2011</strong></p>
+            <p>Tried to contact my PhD supervisor. He was out of his office.</p>
+            <p>I visited my parents and we had a nice dinner together.</p>
+        </div>
+
+        <div class="sidebar">
+           <p><h3>Last Posts</h3>
+            <a href="http://www.Meeting with Supervisor.com">Meeting with Supervisor</a>
+            <a href="http://www.New Car.com">New Car!!!</a>
+            <a href="http://www.Visit My Parents.com">Visit My Parents</a>
+        </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact me: <a href="mailto:email@something.com">email@something.com</a></p>
+    </footer>
+
+</body>
+</html>
