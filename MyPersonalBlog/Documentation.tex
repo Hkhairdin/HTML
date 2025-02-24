@@ -1,0 +1,180 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage[bottom]{footmisc}
+\usepackage{pdfpages}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage} 
+\geometry{margin=1in}
+\usemintedstyle{colorful}
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.35\textwidth]{Logo.png} \\[2cm]
+    \textbf{\Large{Islamic University of Lebanon}} \\[0.5cm]
+    \textbf{\large{(Baalbek Campus)}} \\[1cm]
+    \textbf{\large{Department of Computer and Communications Engineering}} \\[3cm]
+    \textbf{\Large{Client-Side Scripting}} \\[1cm]
+    \textbf{\large{Documentation for Personal Blog Project}} \\[4cm]
+    \textbf{\large{By: Hawraa Khairdin}} \\[1cm]
+    \textbf{\large{Instructor: Dr. Ali Shomun}} \\[2cm]
+    \textbf{\large{February 2025}}
+\end{titlepage}
+
+\newpage
+\pagestyle{empty}
+\tableofcontents
+\newpage
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Abstract}
+This documentation outlines the design and implementation of a personal blog website comprising five interconnected pages: Home, Today, Yesterday, Last Week, and Archives. The project leverages modern HTML5, CSS3 (including custom properties and animations), and JavaScript for interactivity. Key features include a responsive layout, accordion-style content sections, themed navigation, and dynamic styling. The code emphasizes reusability, consistency, and user experience through structured components and modular CSS.
+
+\section{Keywords}
+Personal Blog, HTML5, CSS3, JavaScript, Responsive Design, Accordion, Flexbox, CSS Animations.
+
+\section{Introduction}
+The blog serves as a digital journal documenting daily activities and reflections. It is designed to be visually engaging while maintaining simplicity and usability. Key technical aspects include:
+\begin{itemize}
+    \item Consistent navigation and styling across all pages.
+    \item Use of CSS variables for theme management.
+    \item Responsive layouts using Flexbox.
+    \item Dynamic elements like collapsible accordions (Archives) and hover effects.
+    \item Cross-page linking and semantic HTML5 structure.
+\end{itemize}
+
+\section{Structural Overview}
+The blog consists of five pages with shared components:
+\begin{itemize}
+    \item \textbf{index.html}: Homepage with "Latest Posts" displayed as cards.
+    \item \textbf{today.html/yesterday.html}: Daily entries in a card-based format.
+    \item \textbf{last-week.html}: Timeline layout for older posts.
+    \item \textbf{archives.html}: Accordion-style collapsible monthly archives.
+\end{itemize}
+\subsection{Common Components}
+\begin{itemize}
+    \item \textbf{Header}: Gradient-animated banner with title.
+    \item \textbf{Menu}: Navigation sidebar with links.
+    \item \textbf{Content Area}: Primary content section (cards/accordions/timeline).
+    \item \textbf{Sidebar}: Additional links or highlights (absent in Archives).
+    \item \textbf{Footer}: Contact information and copyright notice.
+\end{itemize}
+
+\section{Implementation Details}
+\subsection{HTML Structure}
+All pages follow this template:
+\begin{minted}[frame=lines, linenos=true, fontsize=\footnotesize]{html}
+<div class="header">...</div>
+<div class="container">
+    <div class="menu">...</div>
+    <div class="content">...</div>
+    <div class="sidebar">...</div> <!-- Excluded in archives.html -->
+</div>
+<footer>...</footer>
+\end{minted}
+\subsection{CSS Architecture}
+Key CSS features include:
+\begin{itemize}
+    \item \textbf{Theme Variables}: Defined in \texttt{:root} for colors and gradients.
+    \item \textbf{Responsive Containers}: Flexbox with \texttt{flex-wrap} for mobile adaptability.
+    \item \textbf{Animations}: Gradient shifts in headers and hover effects.
+    \item \textbf{Shadow \& Transitions}: Depth effects on cards and smooth interactions.
+\end{itemize}
+
+\begin{figure}[H]
+\begin{minted}[frame=lines, fontsize=\footnotesize]{css}
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFE66D;
+}
+\end{minted}
+\caption{Theme Variables Definition}
+\end{figure}
+\subsection{JavaScript Functionality}
+The Archives page uses JavaScript to toggle accordion sections:
+\begin{figure}[H]
+\begin{minted}[frame=lines, fontsize=\footnotesize]{javascript}
+const accordions = document.querySelectorAll('.accordion-header');
+accordions.forEach(accordion => {
+    accordion.addEventListener('click', () => {
+        accordion.parentElement.classList.toggle('active');
+    });
+});
+\end{minted}
+\caption{Accordion Interaction Script}
+\end{figure}
+
+\section{Design Analysis}
+\subsection{Color Scheme}
+\begin{itemize}
+    \item \textbf{Primary}: Coral (\#FF6B6B) for headers and accents.
+    \item \textbf{Secondary}: Teal (\#4ECDC4) for borders and highlights.
+    \item \textbf{Accent}: Yellow (\#FFE66D) for sidebars and links.
+\end{itemize}
+
+\section{Results}
+The final implementation achieves:
+\begin{itemize}
+    \item Consistent theming across all pages.
+    \item Smooth animations for user engagement.
+    \item Efficient navigation between daily/weekly/archive views.
+    \item Error-free interactivity in accordions (Archives page).
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{index.png}
+\caption{Home Page}
+\label{fig:index}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{today.png}
+\caption{Today Page}
+\label{fig:today}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{yesterday.png}
+\caption{Yesterday Page}
+\label{fig:yesterday}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{last-week.png}
+\caption{Last-week Page}
+\label{fig:last-week}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{archive.png}
+\caption{Archive Page}
+\label{fig:archive}
+\end{figure}
+
+\section{Resources}
+\begin{itemize}
+    \item Full code: \url{https://github.com/Hkhairdin/HTML/tree/main/MyPersonalBlog/}
+    \item CSS Gradient Generator: \url{https://cssgradient.io/}
+    \item MDN Web Docs: \url{https://developer.mozilla.org/}
+\end{itemize}
+
+\end{document}
