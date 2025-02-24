@@ -1,3 +1,5 @@
+##My Personal Blog
+
 This documentation outlines the design and implementation of a personal blog website comprising five interconnected pages: Home, Today, Yesterday, Last Week, and Archives. The project leverages modern HTML5, CSS3 (including custom properties and animations), and JavaScript for interactivity. Key features include a responsive layout, accordion-style content sections, themed navigation, and dynamic styling. The code emphasizes reusability, consistency, and user experience through structured components and modular CSS.
 
 ![last-week](https://github.com/user-attachments/assets/8efd0ec6-2cfc-4818-8e86-8ca33a2c0066)
