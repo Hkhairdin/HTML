@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Life Blog</title>
+    <style>
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: linear-gradient(45deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: gradientAnimation 10s infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .container {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem;
+            flex-wrap: wrap;
+        }
+        .menu {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .content {
+            flex: 3;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .sidebar {
+            flex: 1;
+            min-width: 200px;
+            background: var(--accent-color);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem;
+            border-radius: 5px;
+        }
+        a:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .post-date {
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🌞 My Life Journey 🌈</h1>
+    </div>
+
+    <div class="container">
+        <div class="menu">
+            <h3>📅 Navigation</h3>
+            <a href="index.html">Home</a>
+            <a href="today.html">Today</a>
+            <a href="yesterday.html">Yesterday</a>
+            <a href="last-week.html">Last Week</a>
+            <a href="archives.html">Archives</a>
+        </div>
+
+        <div class="content">
+            <h2>✍️ Latest Posts</h2>
+            
+            <article class="card">
+                <h3>Meeting with Colleagues</h3>
+                <p class="post-date">📅 21 Feb 2025</p>
+                <p>Today I went to the university by bus. I had a productive meeting with my friends discussing our project progress.</p>
+            </article>
+
+            <article class="card">
+                <h3>New Scarf!!!</h3>
+                <p class="post-date">📅 19 Feb 2025</p>
+                <p>Just bought a new scarf - looks so cool and colorful! 🧣🌚</p>
+            </article>
+
+            <article class="card">
+                <h3>Family Time</h3>
+                <p class="post-date">📅 17 Feb 2025</p>
+                <p>Visited my grandparents and enjoyed a lovely homemade dinner. 🍲 Tried studying but I was exhausted. 🫠</p>
+            </article>
+        </div>
+
+        <div class="sidebar">
+            <h3>⭐ Popular Posts</h3>
+            <a href="#meeting">Meeting with Supervisor</a>
+            <a href="#car">New Car!!!</a>
+            <a href="#parents">Family Time</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>📧 Contact me: <a href="mailto:hawraakhairdin14@gmail.com" style="color: var(--accent-color);">hawraakhairdin14@gmail.com</a></p>
+        <p>© 2025 My Life Blog | 🌍 Join my journey!</p>
+    </footer>
+</body>
+</html>
